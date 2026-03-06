@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Balaji Computer Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { teal: { 50:'#f0fdfa',100:'#ccfbf1',200:'#99f6e4',300:'#5eead4',400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',700:'#0f766e',800:'#115e59',900:'#134e4a' } },
+          fontFamily: { sans: ['DM Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'DM Sans', sans-serif; }
+    html { scroll-behavior: smooth; }
+    .fade-in { animation: fadeIn 0.7s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .nav-scrolled { background: white !important; box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08); }
+    .nav-link-scrolled { color: #374151 !important; }
+    .pulse-dot { animation: pulseDot 1.5s infinite; }
+    @keyframes pulseDot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+    .partner-card:hover .partner-icon { background-color: #14b8a6; }
+    .partner-card:hover .partner-icon i { color: white !important; }
+    .whybcs-card:hover { background-color: #14b8a6; }
+    .whybcs-card:hover h3, .whybcs-card:hover p { color: white !important; }
+    .whybcs-card:hover .wbcs-icon { background-color: rgba(255,255,255,0.2); }
+    .whybcs-card:hover .wbcs-icon i { color: white !important; }
+    .trustedstat-card:hover .ts-icon { background-color: #14b8a6; }
+    .trustedstat-card:hover .ts-icon i { color: white !important; }
+    .page-hero { background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%); }
+    .slide-text { transition: opacity 0.5s ease, transform 0.5s ease; }
+    .slide-text.animating { opacity: 0; transform: translateY(16px); }
+    .hero-bg { transition: opacity 0.7s ease; }
+    .hero-bg.animating { opacity: 0; }
+    .dot-active { width: 2.5rem !important; background-color: #2dd4bf !important; }
+    .dot-inactive { width: 0.5rem; background-color: rgba(255,255,255,0.4); }
+    .nav-transparent .nav-link { color: white; }
+    .nav-transparent .hamburger-icon { color: white; }
+    
+  </style>
+</head>
+<body class="min-h-screen bg-white">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent nav-transparent" id="navbar">
+  <div class="container mx-auto px-6">
+    <div class="flex items-center justify-between h-20">
+      <a href="index.html" class="flex items-center cursor-pointer">
+        <img src="https://static.readdy.ai/image/9611c0a277c9dbd48d4a6cc1c17881dc/4f504cf0dc5d4e50767361f048ea8cb1.jpeg" alt="Balaji CS Logo" class="h-12 w-auto" />
+      </a>
+      <div class="hidden lg:flex items-center space-x-6 text-sm">
+        <a href="index.html" class="nav-link font-medium text-white hover:text-teal-400 transition-colors duration-300">Home</a>
+<a href="about.html" class="text-teal-400 font-bold">About</a>
+<a href="products.html" class="nav-link font-medium text-white hover:text-teal-400 transition-colors duration-300">Products</a>
+<a href="services.html" class="nav-link font-medium text-white hover:text-teal-400 transition-colors duration-300">Services</a>
+<a href="managed-services.html" class="nav-link font-medium text-white hover:text-teal-400 transition-colors duration-300">Managed Services</a>
+<a href="about.html#why-choose-us" class="nav-link font-medium text-white hover:text-teal-400 transition-colors duration-300">Why Us</a>
+<a href="portfolio.html" class="nav-link font-medium text-white hover:text-teal-400 transition-colors duration-300">Portfolio</a>
+<a href="pricing.html" class="nav-link font-medium text-white hover:text-teal-400 transition-colors duration-300">Pricing</a>
+<a href="contact.html" class="nav-link font-medium text-white hover:text-teal-400 transition-colors duration-300">Contact</a>
+
+      </div>
+      <div class="hidden lg:block">
+        <a href="contact.html" class="px-6 py-3 bg-teal-500 text-white rounded-lg font-semibold hover:bg-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl">Get Started</a>
+      </div>
+      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 cursor-pointer" aria-label="Toggle menu">
+        <i id="hamburger-icon" class="ri-menu-line text-2xl text-white hamburger-icon"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg rounded-lg mb-4 py-4">
+      <div class="flex flex-col space-y-4 px-6">
+        <a href="index.html" class="font-medium text-gray-700 hover:text-teal-500">Home</a>
+<a href="about.html" class="font-medium text-teal-600 font-bold">About</a>
+<a href="products.html" class="font-medium text-gray-700 hover:text-teal-500">Products</a>
+<a href="services.html" class="font-medium text-gray-700 hover:text-teal-500">Services</a>
+<a href="managed-services.html" class="font-medium text-gray-700 hover:text-teal-500">Managed Services</a>
+<a href="about.html#why-choose-us" class="font-medium text-gray-700 hover:text-teal-500">Why Us</a>
+<a href="portfolio.html" class="font-medium text-gray-700 hover:text-teal-500">Portfolio</a>
+<a href="pricing.html" class="font-medium text-gray-700 hover:text-teal-500">Pricing</a>
+<a href="contact.html" class="font-medium text-gray-700 hover:text-teal-500">Contact</a>
+
+        <a href="contact.html" class="px-6 py-3 bg-teal-500 text-white rounded-lg font-semibold hover:bg-teal-600 transition-all text-center">Get Started</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- PAGE HERO -->
+<div class="page-hero pt-32 pb-16 text-center">
+  <div class="container mx-auto px-6">
+    <p class="text-teal-300 font-semibold text-sm uppercase tracking-widest mb-3">Who We Are</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">About <span class="text-teal-300">Balaji Computer Solutions</span></h1>
+    <p class="text-teal-100 text-lg max-w-2xl mx-auto">One of the Fastest-Growing Solution Providers in the Evolving IT Industry</p>
+    <nav class="flex justify-center mt-6 text-sm"><a href="index.html" class="text-teal-300 hover:text-white">Home</a><span class="mx-2 text-teal-400">/</span><span class="text-white">About</span></nav>
+  </div>
+</div>
+
+<!-- ABOUT CONTENT -->
+<section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+  <div class="container mx-auto px-6">
+    <div class="max-w-5xl mx-auto mb-20">
+      <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 mb-12">
+        <p class="text-gray-700 text-lg leading-relaxed mb-6">The Information Revolution sweeping the world in the new millennium continues to transform the way we communicate, exchange knowledge, process information, and conduct business. We strive to anticipate, analyze, and deliver innovative solutions that address the futuristic demands of Information Technology.</p>
+        <p class="text-gray-700 text-lg leading-relaxed">We continuously upgrade our state-of-the-art products and services to meet the rapidly changing needs of today's computer users and organizations.</p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div><img src="https://readdy.ai/api/search-image?query=Modern%20professional%20IT%20office%20workspace%20with%20multiple%20computer%20workstations%2C%20servers%2C%20networking%20equipment%2C%20and%20technology%20infrastructure%20in%20a%20clean%20organized%20environment%20with%20blue%20and%20teal%20lighting%20accents%20showcasing%20enterprise%20technology%20solutions&width=600&height=700&seq=about-office-workspace&orientation=portrait" alt="IT Solutions Workspace" class="rounded-xl shadow-2xl w-full h-96 object-cover object-top" /></div>
+        <div>
+          <h3 class="text-3xl font-bold text-gray-900 mb-6">Our Business Associations</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed text-lg">We offer a complete range of IT products and solutions through our strong partnerships with leading global brands.</p>
+          <div class="space-y-4">
+            <div class="flex items-start"><div class="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></div><div><p class="text-gray-800 font-semibold">Authorised Business Partners</p><p class="text-gray-600">HP (including HP-Compaq), ASUS</p></div></div>
+            <div class="flex items-start"><div class="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></div><div><p class="text-gray-800 font-semibold">Master Resellers</p><p class="text-gray-600">Acer, Lenovo, Dell, Panasonic</p></div></div>
+            <div class="flex items-start"><div class="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></div><div><p class="text-gray-800 font-semibold">Authorised Dealers</p><p class="text-gray-600">APC, Microsoft, Intel, Luminous, D-Link, Cisco, GajShield</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- After-Sales Support -->
+    <div class="bg-gradient-to-r from-teal-500 to-teal-600 rounded-2xl shadow-2xl p-12 mb-20 text-white">
+      <div class="text-center mb-12">
+        <h3 class="text-3xl font-bold mb-4">After-Sales Support</h3>
+        <p class="text-xl text-teal-50 max-w-3xl mx-auto">The true measure of success is customer satisfaction. We offer efficient after-sales support through a dedicated team of highly qualified and experienced professionals.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"><div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-customer-service-2-line text-3xl text-white"></i></div><h4 class="font-bold text-lg mb-2">Quick Response</h4><p class="text-teal-50 text-sm">Call logging system for immediate assistance</p></div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"><div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-time-line text-3xl text-white"></i></div><h4 class="font-bold text-lg mb-2">2-Hour Resolution</h4><p class="text-teal-50 text-sm">Fast complaint resolution within 2 hours</p></div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"><div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="ri-shield-check-line text-3xl text-white"></i></div><h4 class="font-bold text-lg mb-2">Minimum Downtime</h4><p class="text-teal-50 text-sm">Guaranteed uptime commitment</p></div>
+      </div>
+    </div>
+
+    <!-- Activities & Team -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Activities & Capabilities</h3>
+        <div class="space-y-4">
+          <div class="flex items-start"><i class="ri-checkbox-circle-fill text-teal-500 text-xl mr-3 mt-1 flex-shrink-0"></i><p class="text-gray-700">Turnkey networking solutions</p></div>
+          <div class="flex items-start"><i class="ri-checkbox-circle-fill text-teal-500 text-xl mr-3 mt-1 flex-shrink-0"></i><p class="text-gray-700">Mail server setup & management</p></div>
+          <div class="flex items-start"><i class="ri-checkbox-circle-fill text-teal-500 text-xl mr-3 mt-1 flex-shrink-0"></i><p class="text-gray-700">Customized corporate email solutions</p></div>
+          <div class="flex items-start"><i class="ri-checkbox-circle-fill text-teal-500 text-xl mr-3 mt-1 flex-shrink-0"></i><p class="text-gray-700">70+ networking installations completed</p></div>
+          <div class="flex items-start"><i class="ri-checkbox-circle-fill text-teal-500 text-xl mr-3 mt-1 flex-shrink-0"></i><p class="text-gray-700">1400+ systems under Annual Maintenance Contracts</p></div>
+          <div class="flex items-start"><i class="ri-checkbox-circle-fill text-teal-500 text-xl mr-3 mt-1 flex-shrink-0"></i><p class="text-gray-700">IT infrastructure deployment across multiple locations</p></div>
+          <div class="flex items-start"><i class="ri-checkbox-circle-fill text-teal-500 text-xl mr-3 mt-1 flex-shrink-0"></i><p class="text-gray-700">Distribution of HP & Dell IT products across Delhi–NCR region</p></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Team</h3>
+        <p class="text-gray-700 mb-6 leading-relaxed">Our greatest strength lies in our dedicated and skilled team of professionals committed to delivering excellence.</p>
+        <div class="space-y-4">
+          <div class="flex items-start"><i class="ri-team-fill text-teal-500 text-xl mr-3 mt-1"></i><p class="text-gray-700"><strong>32+ professionals</strong> on our team</p></div>
+          <div class="flex items-start"><i class="ri-graduation-cap-fill text-teal-500 text-xl mr-3 mt-1"></i><p class="text-gray-700">Engineers with BE in Electronics & Computer Science</p></div>
+          <div class="flex items-start"><i class="ri-medal-fill text-teal-500 text-xl mr-3 mt-1"></i><p class="text-gray-700">Microsoft Certified Professionals</p></div>
+          <div class="flex items-start"><i class="ri-user-star-fill text-teal-500 text-xl mr-3 mt-1"></i><p class="text-gray-700">Experienced technical & managerial staff</p></div>
+        </div>
+        <div class="mt-6 p-4 bg-teal-50 rounded-lg"><p class="text-gray-700 text-sm leading-relaxed">We foster a professional work environment focused on growth, innovation, and consistent quality delivery.</p></div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+      <div class="text-center"><div class="text-5xl font-bold text-teal-500 mb-2">10+</div><div class="text-gray-600 font-medium">Years Experience</div></div>
+      <div class="text-center"><div class="text-5xl font-bold text-teal-500 mb-2">1400+</div><div class="text-gray-600 font-medium">Systems Under AMC</div></div>
+      <div class="text-center"><div class="text-5xl font-bold text-teal-500 mb-2">70+</div><div class="text-gray-600 font-medium">Network Installations</div></div>
+      <div class="text-center"><div class="text-5xl font-bold text-teal-500 mb-2">32+</div><div class="text-gray-600 font-medium">Expert Professionals</div></div>
+    </div>
+    <div class="text-center"><a href="contact.html" class="inline-block px-10 py-4 bg-teal-500 text-white rounded-lg font-semibold hover:bg-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl text-lg">Partner With Us Today</a></div>
+  </div>
+</section>
+
+<!-- INDUSTRY EXPERTISE -->
+<section class="py-24 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-teal-500 font-semibold text-sm uppercase tracking-widest mb-3">Sectors We Serve</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Your Industry, <span class="text-teal-500">Our Expertise</span></h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto">Every industry has unique challenges. We bring domain-specific IT solutions that drive real results.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-teal-400 hover:-translate-y-1 cursor-default"><div class="relative h-44 overflow-hidden"><img src="https://readdy.ai/api/search-image?query=modern%20government%20office%20building%20with%20secure%20IT%20infrastructure%20and%20professional%20technology%20setup%20in%20India%20with%20clean%20architecture%20and%20teal%20accent%20lighting&width=600&height=400&seq=ind-gov-001&orientation=landscape" alt="Government" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" /><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><div class="absolute bottom-4 left-4 flex items-center gap-2"><div class="w-9 h-9 flex items-center justify-center bg-teal-500 rounded-lg"><i class="ri-government-line text-lg text-white"></i></div><span class="text-white font-bold text-sm">Government & Defence</span></div></div><div class="p-6"><p class="text-gray-500 text-sm leading-relaxed">Secure IT infrastructure for government undertakings, Army HQ, and DRDO with compliance-first approach.</p></div></div>
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-teal-400 hover:-translate-y-1 cursor-default"><div class="relative h-44 overflow-hidden"><img src="https://readdy.ai/api/search-image?query=modern%20corporate%20office%20with%20professional%20IT%20infrastructure%20multiple%20workstations%20and%20networking%20equipment%20in%20a%20clean%20contemporary%20business%20environment%20with%20teal%20lighting&width=600&height=400&seq=ind-corp-001&orientation=landscape" alt="Corporate" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" /><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><div class="absolute bottom-4 left-4 flex items-center gap-2"><div class="w-9 h-9 flex items-center justify-center bg-teal-500 rounded-lg"><i class="ri-building-line text-lg text-white"></i></div><span class="text-white font-bold text-sm">Corporate Sector</span></div></div><div class="p-6"><p class="text-gray-500 text-sm leading-relaxed">End-to-end IT solutions for enterprises — from hardware procurement to managed services and cloud migration.</p></div></div>
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-teal-400 hover:-translate-y-1 cursor-default"><div class="relative h-44 overflow-hidden"><img src="https://readdy.ai/api/search-image?query=modern%20research%20laboratory%20with%20advanced%20computing%20equipment%20servers%20and%20scientific%20technology%20infrastructure%20in%20a%20professional%20academic%20environment%20with%20clean%20design&width=600&height=400&seq=ind-res-001&orientation=landscape" alt="Research" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" /><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><div class="absolute bottom-4 left-4 flex items-center gap-2"><div class="w-9 h-9 flex items-center justify-center bg-teal-500 rounded-lg"><i class="ri-flask-line text-lg text-white"></i></div><span class="text-white font-bold text-sm">Research & Institutions</span></div></div><div class="p-6"><p class="text-gray-500 text-sm leading-relaxed">High-performance computing and networking solutions for research labs, universities, and reputed institutions.</p></div></div>
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-teal-400 hover:-translate-y-1 cursor-default"><div class="relative h-44 overflow-hidden"><img src="https://readdy.ai/api/search-image?query=modern%20small%20office%20home%20office%20setup%20with%20clean%20workstations%20computers%20and%20networking%20equipment%20professional%20and%20organized%20workspace%20with%20natural%20lighting&width=600&height=400&seq=ind-soho-001&orientation=landscape" alt="SOHO" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" /><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><div class="absolute bottom-4 left-4 flex items-center gap-2"><div class="w-9 h-9 flex items-center justify-center bg-teal-500 rounded-lg"><i class="ri-store-line text-lg text-white"></i></div><span class="text-white font-bold text-sm">Retail & SOHO</span></div></div><div class="p-6"><p class="text-gray-500 text-sm leading-relaxed">Scalable IT setups for small offices, home offices, and retail chains with fast deployment and AMC support.</p></div></div>
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-teal-400 hover:-translate-y-1 cursor-default"><div class="relative h-44 overflow-hidden"><img src="https://readdy.ai/api/search-image?query=modern%20hospital%20IT%20infrastructure%20with%20medical%20technology%20systems%20secure%20data%20management%20and%20networking%20equipment%20in%20a%20professional%20healthcare%20facility%20with%20clean%20design&width=600&height=400&seq=ind-health-001&orientation=landscape" alt="Healthcare" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" /><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><div class="absolute bottom-4 left-4 flex items-center gap-2"><div class="w-9 h-9 flex items-center justify-center bg-teal-500 rounded-lg"><i class="ri-hospital-line text-lg text-white"></i></div><span class="text-white font-bold text-sm">Healthcare</span></div></div><div class="p-6"><p class="text-gray-500 text-sm leading-relaxed">Reliable IT infrastructure for hospitals and clinics ensuring data security, uptime, and compliance.</p></div></div>
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-teal-400 hover:-translate-y-1 cursor-default"><div class="relative h-44 overflow-hidden"><img src="https://readdy.ai/api/search-image?query=modern%20financial%20services%20office%20with%20secure%20IT%20infrastructure%20multiple%20monitors%20trading%20systems%20and%20professional%20technology%20setup%20in%20a%20clean%20corporate%20environment&width=600&height=400&seq=ind-fin-001&orientation=landscape" alt="Financial" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" /><div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div><div class="absolute bottom-4 left-4 flex items-center gap-2"><div class="w-9 h-9 flex items-center justify-center bg-teal-500 rounded-lg"><i class="ri-bank-line text-lg text-white"></i></div><span class="text-white font-bold text-sm">Financial Services</span></div></div><div class="p-6"><p class="text-gray-500 text-sm leading-relaxed">Secure, high-availability IT environments for banks, NBFCs, and financial institutions with strict SLAs.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="why-choose-us" class="py-24 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-teal-500 font-semibold text-sm uppercase tracking-widest mb-3">Recognition</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Achievements & <span class="text-teal-500">Recognition</span></h2>
+      <p class="text-lg text-gray-500 max-w-xl mx-auto">Industry certifications and partner accolades that reflect our commitment to excellence.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mb-20">
+      <div class="flex flex-col items-center justify-center p-6 rounded-2xl border-2 bg-amber-50 border-amber-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-default"><div class="w-14 h-14 flex items-center justify-center rounded-full bg-white shadow-sm mb-4"><i class="ri-google-line text-2xl text-amber-500"></i></div><div class="font-bold text-gray-900 text-sm text-center leading-tight">HP Gold Partner</div><div class="text-xs text-gray-500 text-center mt-1">of the Year</div></div>
+      <div class="flex flex-col items-center justify-center p-6 rounded-2xl border-2 bg-teal-50 border-teal-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-default"><div class="w-14 h-14 flex items-center justify-center rounded-full bg-white shadow-sm mb-4"><i class="ri-award-line text-2xl text-teal-500"></i></div><div class="font-bold text-gray-900 text-sm text-center leading-tight">Dell Preferred</div><div class="text-xs text-gray-500 text-center mt-1">Partner Award</div></div>
+      <div class="flex flex-col items-center justify-center p-6 rounded-2xl border-2 bg-slate-50 border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-default"><div class="w-14 h-14 flex items-center justify-center rounded-full bg-white shadow-sm mb-4"><i class="ri-shield-star-line text-2xl text-slate-500"></i></div><div class="font-bold text-gray-900 text-sm text-center leading-tight">ISO 9001:2015</div><div class="text-xs text-gray-500 text-center mt-1">Certified Organisation</div></div>
+      <div class="flex flex-col items-center justify-center p-6 rounded-2xl border-2 bg-amber-50 border-amber-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-default"><div class="w-14 h-14 flex items-center justify-center rounded-full bg-white shadow-sm mb-4"><i class="ri-windows-line text-2xl text-amber-500"></i></div><div class="font-bold text-gray-900 text-sm text-center leading-tight">Microsoft Gold</div><div class="text-xs text-gray-500 text-center mt-1">Partner of the Year</div></div>
+      <div class="flex flex-col items-center justify-center p-6 rounded-2xl border-2 bg-teal-50 border-teal-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-default"><div class="w-14 h-14 flex items-center justify-center rounded-full bg-white shadow-sm mb-4"><i class="ri-verified-badge-line text-2xl text-teal-500"></i></div><div class="font-bold text-gray-900 text-sm text-center leading-tight">Microsoft Gold</div><div class="text-xs text-gray-500 text-center mt-1">Advanced Partner</div></div>
+      <div class="flex flex-col items-center justify-center p-6 rounded-2xl border-2 bg-slate-50 border-slate-200 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-default"><div class="w-14 h-14 flex items-center justify-center rounded-full bg-white shadow-sm mb-4"><i class="ri-medal-line text-2xl text-slate-500"></i></div><div class="font-bold text-gray-900 text-sm text-center leading-tight">Cisco Select</div><div class="text-xs text-gray-500 text-center mt-1">Certified Partner</div></div>
+    </div>
+
+    <!-- WHY BCS -->
+    <div class="text-center mb-16">
+      <p class="text-teal-500 font-semibold text-sm uppercase tracking-widest mb-3">Our Edge</p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Why <span class="text-teal-500">BCS?</span></h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto">We don't just implement technology — we ensure businesses work smarter.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="whybcs-card group flex gap-5 p-7 bg-gray-50 rounded-2xl hover:bg-teal-500 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 hover:border-teal-500"><div class="wbcs-icon w-14 h-14 flex items-center justify-center bg-teal-100 group-hover:bg-white/20 rounded-xl flex-shrink-0 transition-colors duration-300"><i class="ri-google-line text-2xl text-teal-600 group-hover:text-white transition-colors duration-300"></i></div><div><h3 class="text-lg font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">Google Cloud & OEM Backed Expertise</h3><p class="text-sm text-gray-500 group-hover:text-teal-50 leading-relaxed transition-colors duration-300">Authorised partner with deep technical knowledge across Google Cloud, HP, Dell, Lenovo, and Microsoft ecosystems.</p></div></div>
+      <div class="whybcs-card group flex gap-5 p-7 bg-gray-50 rounded-2xl hover:bg-teal-500 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 hover:border-teal-500"><div class="wbcs-icon w-14 h-14 flex items-center justify-center bg-teal-100 group-hover:bg-white/20 rounded-xl flex-shrink-0 transition-colors duration-300"><i class="ri-cloud-line text-2xl text-teal-600 group-hover:text-white transition-colors duration-300"></i></div><div><h3 class="text-lg font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">One Platform, Infinite Scale</h3><p class="text-sm text-gray-500 group-hover:text-teal-50 leading-relaxed transition-colors duration-300">From SMBs to large enterprises, we scale our solutions to match your growth — from 10 to 10,000+ users.</p></div></div>
+      <div class="whybcs-card group flex gap-5 p-7 bg-gray-50 rounded-2xl hover:bg-teal-500 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 hover:border-teal-500"><div class="wbcs-icon w-14 h-14 flex items-center justify-center bg-teal-100 group-hover:bg-white/20 rounded-xl flex-shrink-0 transition-colors duration-300"><i class="ri-exchange-line text-2xl text-teal-600 group-hover:text-white transition-colors duration-300"></i></div><div><h3 class="text-lg font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">Seamless Migration</h3><p class="text-sm text-gray-500 group-hover:text-teal-50 leading-relaxed transition-colors duration-300">Zero-disruption migration services for email, cloud, servers, and applications with rollback planning.</p></div></div>
+      <div class="whybcs-card group flex gap-5 p-7 bg-gray-50 rounded-2xl hover:bg-teal-500 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 hover:border-teal-500"><div class="wbcs-icon w-14 h-14 flex items-center justify-center bg-teal-100 group-hover:bg-white/20 rounded-xl flex-shrink-0 transition-colors duration-300"><i class="ri-shield-check-line text-2xl text-teal-600 group-hover:text-white transition-colors duration-300"></i></div><div><h3 class="text-lg font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">ISO-Certified Security</h3><p class="text-sm text-gray-500 group-hover:text-teal-50 leading-relaxed transition-colors duration-300">Enterprise-grade security practices with certified professionals ensuring compliance and data protection.</p></div></div>
+      <div class="whybcs-card group flex gap-5 p-7 bg-gray-50 rounded-2xl hover:bg-teal-500 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 hover:border-teal-500"><div class="wbcs-icon w-14 h-14 flex items-center justify-center bg-teal-100 group-hover:bg-white/20 rounded-xl flex-shrink-0 transition-colors duration-300"><i class="ri-headphone-line text-2xl text-teal-600 group-hover:text-white transition-colors duration-300"></i></div><div><h3 class="text-lg font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">24/7 Expert Support</h3><p class="text-sm text-gray-500 group-hover:text-teal-50 leading-relaxed transition-colors duration-300">Round-the-clock helpdesk with L1/L2/L3 engineers, SLA-based response, and mobile service units.</p></div></div>
+      <div class="whybcs-card group flex gap-5 p-7 bg-gray-50 rounded-2xl hover:bg-teal-500 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 hover:border-teal-500"><div class="wbcs-icon w-14 h-14 flex items-center justify-center bg-teal-100 group-hover:bg-white/20 rounded-xl flex-shrink-0 transition-colors duration-300"><i class="ri-bar-chart-grouped-line text-2xl text-teal-600 group-hover:text-white transition-colors duration-300"></i></div><div><h3 class="text-lg font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">Proven Track Record</h3><p class="text-sm text-gray-500 group-hover:text-teal-50 leading-relaxed transition-colors duration-300">70+ network installations, 1400+ systems under AMC, and 500+ satisfied clients across Delhi NCR.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gradient-to-br from-teal-600 to-teal-700 text-white">
+  <div class="container mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div>
+        <img src="https://static.readdy.ai/image/9611c0a277c9dbd48d4a6cc1c17881dc/4f504cf0dc5d4e50767361f048ea8cb1.jpeg" alt="Balaji CS Logo" class="h-12 w-auto mb-6" />
+        <p class="text-teal-100 mb-6 leading-relaxed">Your trusted partner in digital transformation. We deliver innovative IT solutions that drive business growth.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 bg-teal-500 hover:bg-white hover:text-teal-600 rounded-full flex items-center justify-center transition-colors duration-300"><i class="ri-facebook-fill text-lg"></i></a>
+          <a href="#" class="w-10 h-10 bg-teal-500 hover:bg-white hover:text-teal-600 rounded-full flex items-center justify-center transition-colors duration-300"><i class="ri-twitter-fill text-lg"></i></a>
+          <a href="#" class="w-10 h-10 bg-teal-500 hover:bg-white hover:text-teal-600 rounded-full flex items-center justify-center transition-colors duration-300"><i class="ri-linkedin-fill text-lg"></i></a>
+          <a href="#" class="w-10 h-10 bg-teal-500 hover:bg-white hover:text-teal-600 rounded-full flex items-center justify-center transition-colors duration-300"><i class="ri-instagram-fill text-lg"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="hover:text-teal-400 transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-teal-400 transition-colors">About Us</a></li>
+          <li><a href="products.html" class="hover:text-teal-400 transition-colors">Products</a></li>
+          <li><a href="services.html" class="hover:text-teal-400 transition-colors">Services</a></li>
+          <li><a href="managed-services.html" class="hover:text-teal-400 transition-colors">Managed Services</a></li>
+          <li><a href="portfolio.html" class="hover:text-teal-400 transition-colors">Portfolio</a></li>
+          <li><a href="pricing.html" class="hover:text-teal-400 transition-colors">Pricing</a></li>
+          <li><a href="contact.html" class="hover:text-teal-400 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6">Our Services</h3>
+        <ul class="space-y-3">
+          <li><a href="services.html" class="text-teal-100 hover:text-white transition-colors">IT Infrastructure Setup</a></li>
+          <li><a href="services.html" class="text-teal-100 hover:text-white transition-colors">Network Design & Implementation</a></li>
+          <li><a href="managed-services.html" class="text-teal-100 hover:text-white transition-colors">Cloud Deployment & Management</a></li>
+          <li><a href="managed-services.html" class="text-teal-100 hover:text-white transition-colors">Annual Maintenance Contracts</a></li>
+          <li><a href="services.html" class="text-teal-100 hover:text-white transition-colors">Cybersecurity Solutions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start"><i class="ri-map-pin-line text-teal-300 mt-1 mr-3"></i><span class="text-teal-100">405B, Skylark Building, 60 Nehru Place, New Delhi – 110019</span></li>
+          <li class="flex items-start"><i class="ri-phone-line text-teal-300 mt-1 mr-3"></i><div class="text-teal-100"><a href="tel:01146698819" class="hover:text-white block">011-46698819</a><a href="tel:+919971776428" class="hover:text-white block">+91 9971776428</a></div></li>
+          <li class="flex items-start"><i class="ri-mail-line text-teal-300 mt-1 mr-3"></i><a href="mailto:info@balajics.com" class="text-teal-100 hover:text-white">info@balajics.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-teal-500 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-teal-100 text-sm mb-4 md:mb-0">© 2025 Balaji Computer Solution. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-teal-100 hover:text-white text-sm transition-colors">Privacy Policy</a>
+          <a href="#" class="text-teal-100 hover:text-white text-sm transition-colors">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    const links = document.querySelectorAll('.nav-link');
+    const hamburger = document.querySelector('.hamburger-icon');
+    if (window.scrollY > 50) {
+      navbar.classList.add('nav-scrolled');
+      navbar.classList.remove('nav-transparent');
+      links.forEach(l => { l.style.color = '#374151'; });
+      if (hamburger) hamburger.style.color = '#111827';
+    } else {
+      navbar.classList.remove('nav-scrolled');
+      navbar.classList.add('nav-transparent');
+      links.forEach(l => { l.style.color = 'white'; });
+      if (hamburger) hamburger.style.color = 'white';
+    }
+  });
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('hamburger-icon');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      icon.className = 'ri-close-line text-2xl text-gray-900';
+    } else {
+      menu.classList.add('hidden');
+      icon.className = 'ri-menu-line text-2xl hamburger-icon';
+    }
+  }
+</script>
+</body></html>
